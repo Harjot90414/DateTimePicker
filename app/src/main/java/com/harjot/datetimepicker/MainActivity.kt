@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         
         binding.ibDate.setOnClickListener {
             var calendar= Calendar.getInstance()
-            var datePickerDialog = DatePickerDialog(this, {_,year,month,date ->
+            var datePickerDialog = DatePickerDialog(this,R.style.CustomDatePickerDialog,{_,year,month,date ->
                 var simpleDateFormat = SimpleDateFormat("dd/MM/YYYY")
                 calendar.set(year,month,date)
                 binding.etDate.setText(simpleDateFormat.format(calendar.time))
@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             val endHour = 18   // 06:00 PM
             val endMinute = 0
             var calendar= Calendar.getInstance()
+//            var timePickerDialog = TimePickerDialog(this,R.style.CustomTimePickerDialog,{_,hour,minute->
+//
+//            },calendar.get(Calendar.HOUR_OF_DAY),
+//                calendar.get(Calendar.MINUTE),
+//                false)
             val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
                 if (isTimeInRange(hourOfDay, minute, startHour, startMinute, endHour, endMinute)) {
                     var simpleDateFormat = SimpleDateFormat("hh:mm a")
@@ -66,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 //                false)
 //            timePickerDialog.show()
             val timePickerDialog = TimePickerDialog(
-                this, timeSetListener, startHour, startMinute, false
+                this,R.style.CustomTimePickerDialog, timeSetListener, startHour, startMinute, false
             )
             timePickerDialog.show()
 

@@ -13,4 +13,33 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Custom DatePickerDialog style -->
+    <style name="CustomDatePickerDialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:datePickerStyle">@style/CustomDatePicker</item>
+    </style>
+
+    <!-- Custom DatePicker style -->
+    <style name="CustomDatePicker" parent="">
+        <item name="android:headerBackground">@color/purple_500</item>
+        <item name="android:calendarTextColor">@color/teal_200</item>
+        <item name="android:dayOfWeekBackground">@color/purple_700</item>
+        <item name="android:dayOfWeekTextAppearance">@style/CustomDayOfWeekText</item>
+    </style>
+
+    <style name="CustomDayOfWeekText" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/teal_200</item>
+    </style>
+
+    <!-- Custom TimePickerDialog style -->
+    <style name="CustomTimePickerDialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:timePickerStyle">@style/CustomTimePicker</item>
+    </style>
+
+    <!-- Custom TimePicker style -->
+    <style name="CustomTimePicker" parent="Widget.MaterialComponents.TimePicker">
+        <item name="android:headerBackground">@color/purple_500</item>
+        <item name="android:timePickerMode">spinner</item>
+        <item name="android:timePickerDialogTheme">@style/CustomTimePickerDialog</item>
+    </style>
 </resources>
